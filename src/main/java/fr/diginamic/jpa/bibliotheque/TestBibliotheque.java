@@ -3,6 +3,7 @@ package fr.diginamic.jpa.bibliotheque;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 
 import fr.diginamic.bibliotheque.entities.Livre;
 
@@ -13,12 +14,14 @@ public class TestBibliotheque {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("bibliotheque-jpa");
 		EntityManager em = emf.createEntityManager();
 		
-		Livre f = em.find(Livre.class, 1);
-		if(f != null){
-			System.out.println(f.getId());
-		}
+		TypedQuery<Livre> result = em.createQuery("select l from Livre l where l.titre='Germinal'",Livre.class);
+		
+		
+		
+		Livre livre = result.getResultList().get(0);
+		System.out.println(livre.getId() + " / "+livre.getTitre() + " / "+ livre.getAuteur());
+		
 		em.close();
-
 	}
 
 }
