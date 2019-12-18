@@ -1,4 +1,4 @@
-package fr.diginamic.jpa.bibliotheque;
+package fr.diginamic.bibliotheque;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
