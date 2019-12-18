@@ -76,6 +76,20 @@ public class Client {
 	public String toString() {
 		return "Client [id=" + id + ", nom=" + nom + ", prenom=" + prenom  + "]";
 	}
+
+	/** Getter
+	 * @return the emprunts
+	 */
+	public List<Emprunt> getEmprunts() {
+		return emprunts;
+	}
+
+	/** Setter
+	 * @param emprunts the emprunts to set
+	 */
+	public void setEmprunts(List<Emprunt> emprunts) {
+		this.emprunts = emprunts;
+	}
 	
 
 }
